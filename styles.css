@@ -1,0 +1,118 @@
+body{
+    position: absolute;
+    background-color: rgb(30, 37, 30);
+    width:100%;
+    color:#fff;
+    text-align:center;
+    font-family: "Karla", sans-serif;
+}
+
+.home-page{
+    padding: 50px
+}
+.big-heading{
+    width:80%;
+    margin:auto;
+    padding:50px 0px;
+    font-size:4rem;
+    font-family: 'Cutive Mono', monospace;
+    /* letter-spacing:-5px; */
+    text-decoration : underline
+}
+
+.error{
+    color: rgb(255, 53, 53);
+}
+
+.textBox{
+    width: 80%;
+    margin : auto;
+    padding: 30px 0px;
+    border-style: solid none;
+    border-color :  rgb(56, 54, 54);
+}
+#text{
+    margin:auto;
+    display:inline-block;
+    padding:20px 0px;
+    text-align:center;
+    font-family: 'Cutive Mono', monospace;
+    font-size: 1.5rem;
+    font-weight:bold;
+    line-height:1.5;
+    /* white-space: pre-wrap; */
+}
+
+
+
+.touched{
+    color: #fff;
+}
+
+
+.scores{
+    width:80%;
+    margin:10px auto;
+}
+
+.data{
+    width:20%;
+    margin:auto;
+}
+
+.datatype{
+    font-family: "Inconsolata", monospace;
+    padding:0px 30px;
+    font-size: 1rem;
+    border-style: solid;
+    border-width:0.1px;
+    border-color:  rgb(56, 54, 54);
+}
+.speed, .error, .max{
+    font-family: "Inconsolata", monospace;
+    padding:0px 20px;
+    font-size: 2rem;
+    border-style: solid;
+    border-width:0.1px;
+    border-color:  rgb(56, 54, 54);
+}
+
+ .speed-gain, .error-gain{
+    font-family: "Inconsolata", monospace;
+    font-size: 1rem;
+    padding:10px 0px;
+    border-style: solid;
+    border-width:0.1px;
+    border-color:  rgb(56, 54, 54);
+ }
+.speed, .speed-gain, .max{
+    width:220px;
+}
+
+
+
+/* NOTE: the heirarchy of the classes is important. */
+
+.typed{
+    color: #a0a0a0;
+    background:none;
+}
+
+.wrong-typed{
+    color: rgb(255, 53, 53);
+    background:none;
+}
+
+.untyped{
+    color:#fff;
+    background: rgb(30, 37, 30);
+}
+
+.currentKey{
+    color : rgb(30, 37, 30);
+    background: #fff
+}
+
+.untouched{
+    color: #5c5c5c;
+}
