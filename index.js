@@ -27,7 +27,6 @@ function Line() {
 
 Line();
 
-
 $(".textBox").click(() => {
 
     $("#text").removeClass("untouched").addClass("touched");
@@ -42,17 +41,23 @@ $(".textBox").click(() => {
     let time_started;
     let time_ended;
     var speeds = []
+    var errors = []
     $(document).off().on("keydown", (e) => {
 
         var cur_letter = $(".currentKey").get(0).textContent;
         var cur_key = e.key;
 
+        if(e.keyCode == 32 && e.target == document.body) {
+        e.preventDefault();
+        }
+        
         if (keys.includes(cur_key)) {
 
             // calculate the time of start
             if ( $(".typed").first().length === 0 && $(".wrong-typed").first().length === 0 ) {
                 time_started = new Date().getTime()
             }
+            
 
             // correct key
             if ( (cur_key === " " && cur_letter === "␣") || (cur_key === cur_letter) ) {
@@ -63,21 +68,54 @@ $(".textBox").click(() => {
 
                 if ($(".untyped").first().length === 0) {
 
+                
+                var errorColor = {
+                    color: ""
+                }
+                var speedColor = {
+                    color: ""
+                }
                     // display speed
                     time_ended = new Date().getTime();
 
                     // speed formulae
                     var speed = Math.floor(($(".input-letters").get().length * 60000) / ( 4.7 *(time_ended - time_started))*100)/100
                     $(".speed").html(speed + "<span style='font-size:1rem'> wpm</span>")
+                    speeds.push(speed); 
                     
-                    speeds.push(speed)
-                    var max = speeds.reduce((a, b)=>{return Math.max(a, b)});
-                    console.log(speeds)
-                    console.log(max)
-                    $(".max").html( max + "<span style='font-size:1rem'> wpm</span>")
+                    // calculating max speed
+                    var max = speeds.reduce((a, b) => { return Math.max(a, b) });
+                    // speed-gain formulae
+                    var speed_gain = (Math.floor((speed - (speeds.reduce((a, b) => { return a + b }) / speeds.length)) * 100)) / 100
                     
-                    // display error
-                    $(".error").html($(".wrong-typed").get().length);
+                    // ṣet speed-gain color
+                    if (speed_gain >= 0) {
+                        speedColor.color = "#00b100"
+                    } else {
+                        speedColor.color = "rgb(255, 53, 53)";
+                    }
+
+
+                    $(".speed-gain").html("<span style='color: " + speedColor.color + "'>" + speed_gain + "<span style='font-size:1rem'> wpm</span>")
+                    $(".max").html(max + "<span style='font-size:1rem'> wpm</span>")
+                    
+                    
+                    // error formulae
+                    var error = $(".wrong-typed").get().length
+                    $(".error").html(error)
+                    errors.push(error); 
+
+                    // error-gain formulae
+                    var error_gain =(Math.floor((error -  (errors.reduce((a, b) => { return a + b }) / errors.length))*100))/100
+                    
+                    // set error-gain color
+                    if (error_gain <= 0) {
+                        errorColor.color = "#00b100"
+                    } else {
+                        errorColor.color = "rgb(255, 53, 53)";
+                    }
+
+                    $(".error-gain").html("<span style='color :" + errorColor.color + "'>" + error_gain + "</span>")
                     
                     Line();
                     $(".input-letters").addClass("untyped").removeClass("typed wrong-typed currentKey");

@@ -8,7 +8,8 @@ body{
 }
 
 .home-page{
-    padding: 50px
+    padding: 50px 0px;
+    min-height:100vh
 }
 .big-heading{
     width:80%;
@@ -18,10 +19,6 @@ body{
     font-family: 'Cutive Mono', monospace;
     /* letter-spacing:-5px; */
     text-decoration : underline
-}
-
-.error{
-    color: rgb(255, 53, 53);
 }
 
 .textBox{
@@ -53,6 +50,7 @@ body{
 .scores{
     width:80%;
     margin:10px auto;
+    padding:50px 0px;
 }
 
 .data{
@@ -77,6 +75,9 @@ body{
     border-color:  rgb(56, 54, 54);
 }
 
+.max{
+    font-size: 3rem;
+}
  .speed-gain, .error-gain{
     font-family: "Inconsolata", monospace;
     font-size: 1rem;
@@ -86,10 +87,33 @@ body{
     border-color:  rgb(56, 54, 54);
  }
 .speed, .speed-gain, .max{
-    width:220px;
+    width:250px;
 }
 
+.rules-div{
+    margin:10px 0px;
+    padding : 50px 0px;
+    text-align: left;
+    font-size:1.2rem;
+    color:rgb(214, 214, 214);
+    box-shadow: 0 0 5px #fff
+}
 
+.rules{
+    width : 60%;
+    margin:auto;
+    padding : 30px;
+    box-shadow: 0 0 5px rgb(150, 150, 150)
+}
+
+.rule-heading{
+    /* font-family: "Inconsolata", monospace; */
+    font-weight: bold
+}
+.rule-list p{
+    padding : 10px 0px;
+    margin:0px
+}
 
 /* NOTE: the heirarchy of the classes is important. */
 

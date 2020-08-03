@@ -15,13 +15,15 @@
     <!-- google-fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Karla&family=Cutive+Mono&display=swap" rel="stylesheet">
     
+    <!-- favicon -->
+    <link rel="icon" href="typefast-logo.png">
     <!-- css Link -->
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <div class="container-fluid">
+    <div class="container-fluid home-page">
 
         <h1 class="big-heading">Typefast</h1>  
         <div class="scores">
@@ -31,10 +33,10 @@
                     <td class="speed">00<span style="font-size:1rem"> wpm</span></td>
                 </tr>
                 <!-- to be added in future -->
-                <!-- <tr>
+                <tr>
                     <td class="datatype">Gain</td>
                     <td class="speed-gain">00</td>
-                </tr> -->
+                </tr>
             </table>
             <table style="border-style:solid; border-width:3px; display:inline-block">
                 <tr>
@@ -42,14 +44,14 @@
                     <td class="error">00</td>
                 </tr>
                 <!-- to be added in future -->
-                <!-- <tr>
+                <tr>
                     <td class="datatype">Gain</td>
                     <td class="error-gain">00</td>
-                </tr> -->
+                </tr>
             </table>
-            <table style="border-style:solid; border-width:3px; display:inline-block">
+            <table style="border-style:solid; border-width:1px; display:inline-block">
                 <tr>
-                    <td class="datatype">Highest</td>
+                    <td class="datatype">Highest<br>Speed</td>
                     <td class="max">00</td>
                 </tr>
             </table>
@@ -60,7 +62,19 @@
         </div>
 
     </div>
-
+    <div class="rules-div container-fluid">
+        <div class="rules">
+            <h2 class="rule-heading">What is Touch Typing?</h2>  
+            <p>Touch typing is the ability to use muscle memory to find keys fast, without using the sense of sight, and with all the available fingers, just like piano players do. It significantly improves typing speed and eliminates errors. Touch typing simply makes you more productive and it is a skill worth learning. However, many people engage in the bad habit of ‘hunt-and-peck’ typing, even those seasoned professionals with years and decades of computer experience. It  is easy to understand, though, as touch typing requires dedicated practice to  learn it well.</p>
+            <p>This is a website for practicing <span style="font-family: 'Inconsolata', monospace;font-size:1.2rem"><strong>[Touch Typing]</strong></span>. Some statistics are provided to help you track and improve you performance.</p>
+            <p><span style="font-family: 'Inconsolata', monospace;font-size:1.2rem; text-decoration: underline;">[SPEED]</span> : Indicates the speed at which you typed the last sentence.</p>
+            <p><span style="font-family: 'Inconsolata', monospace;font-size:1.2rem; text-decoration: underline;">[SPEED-GAIN]</span> : Indicates the gain in  speed at which the last sentence was typed relative to the average speed of current session.</p>
+            <p><span style="font-family: 'Inconsolata', monospace;font-size:1.2rem; text-decoration: underline;">[HIGHEST SPEED]</span> : Indicates the highest speed attained in the current session.</p>
+            <p><span style="font-family: 'Inconsolata', monospace;font-size:1.2rem; text-decoration: underline;">[ERROR(S)]</span> : Indicates the number of errors commited in the last sentence.</p>
+            <p><span style="font-family: 'Inconsolata', monospace;font-size:1.2rem; text-decoration: underline;">[ERROR-GAIN]</span> : Indicates the gain in error(s) of the last sentence relative to the average error(s) commited in the current session.</p>
+        </div>
+        <!-- <img height="200" width="400" src="touch-typing.png" alt="touch-typing"> -->
+    </div>
 </body>
     <script src="index.js"></script>
 
